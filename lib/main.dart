@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screens/home_screen.dart';
 
 void main() {
@@ -13,13 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '',
+      title: 'Your App Title', // You can specify a title here
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData.dark().copyWith(
+        // Customize your dark theme here
+        primaryColor: Colors.black, // Set your primary color
+        scaffoldBackgroundColor:
+            Colors.black, // Background color of the scaffold
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black, // App bar background color
+          foregroundColor: Colors.white, // App bar text and icon color
+        ),
+        // You can add more theme customizations here if needed
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

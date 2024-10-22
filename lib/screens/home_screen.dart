@@ -99,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        selectedItemColor: Colors.white,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: const [
@@ -133,8 +133,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Chip(
-        label: Text(label),
-        backgroundColor: const Color.fromARGB(255, 248, 245, 245),
+        label: Text(
+          label,
+          style: const TextStyle(
+              color: Colors.white), // Change text color to white for contrast
+        ),
+        backgroundColor: Colors.black, // Set background color to black
       ),
     );
   }
